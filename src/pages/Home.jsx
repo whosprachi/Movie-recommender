@@ -26,13 +26,16 @@ const handleSearch =(e) =>{
 
       </form>
    <div className="movies-grid">
-    {movies.map((movie)=>(
+    {movies.map(
+        (movie)=>
+            movie.title.toLowerCase().startsWith(searchQuery) && (
         <MovieCard movie={movie} key={movie.id}/>
-    ))}
+    )
+    )}
      
    </div>
 </div>
 );
 }
 
-export default Home
+export default Home;

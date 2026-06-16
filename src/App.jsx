@@ -1,20 +1,16 @@
 
-import MovieCard from './components/MovieCard'
 import Home from './pages/Home'
+import Favorites from './pages/Favorites'
+import {Routes,Route} from 'react-router-dom'
 function App() {
-     const movieNumber = 1;
+   return (
+    <main className="main-content">
+      <Routes>
+        <Route path="/" element={ <Home />}/>
+        <Route path="/favorites" element={ <Favorites />}/>
+      </Routes>
 
-     if(movieNumber=== 1){}
-  return(
-   <>
-   {movieNumber === 1? (
-     <MovieCard movie={{title:"Tims film", release_date:"2024"}}/>
-   ):(
-   <MovieCard movie={{title:"Johns film", release_date:"2020"}}/>
-   )} 
-
-   <Home/>
-   </>
-  )
+    </main>
+  );
 }
 export default App
